@@ -1,91 +1,219 @@
 # AlgoVisual - Production Ready DSA Visualizer
 
-AlgoVisual is a comprehensive, production-ready Data Structures and Algorithms visualizer built with the MERN stack (MongoDB, Express, React, Node.js). 
+🚀 Live Demo: https://algovisual-kappa.vercel.app
+
+AlgoVisual is a comprehensive, production-ready Data Structures and Algorithms visualizer built with the MERN stack (MongoDB, Express, React, Node.js).
+
+---
 
 ## Features
+
 - **Sorting Visualizer**: Bubble Sort, Selection Sort with animations, speed control, and array size adjustment.
 - **Searching Visualizer**: Linear Search, Binary Search with visual indicators.
 - **Graph Visualizer**: Interactive node/edge creation, BFS, and DFS visualizations.
-- **Pathfinding Visualizer**: Grid-based interactive wall building, and BFS shortest path algorithm.
+- **Pathfinding Visualizer**: Grid-based interactive wall building and BFS shortest path algorithm.
 - **Code Playground**: Integrated Monaco Editor supporting JavaScript, Python, C++, and Java execution simulation.
 - **Authentication**: JWT-based login and registration.
 - **Dark/Light Mode**: Full theme support with Tailwind CSS.
 
+---
+
+## 🌐 Live Website
+
+👉 https://algovisual-kappa.vercel.app
+
+---
+
 ## Technology Stack
-- **Frontend**: React.js, Vite, Tailwind CSS, Framer Motion, Monaco Editor
-- **Backend**: Node.js, Express.js, MongoDB, Mongoose, JWT
+
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Monaco Editor
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+
+---
 
 ## Folder Structure
-```
+
+```bash
 visualizer/
-├── client/          # Frontend React/Vite app
+├── client/
 │   ├── src/
-│   │   ├── components/  # Reusable UI components
-│   │   ├── context/     # Auth and Theme context
-│   │   ├── pages/       # Visualizer pages and views
-│   │   ├── utils/       # Algorithm logic
-│   │   ├── App.jsx      # Routing
-│   │   └── main.jsx     # Entry point
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   ├── utils/
+│   │   ├── App.jsx
+│   │   └── main.jsx
 │   ├── tailwind.config.js
 │   └── package.json
-└── server/          # Backend Express app
-    ├── config/      # Database connection
-    ├── controllers/ # Route logic
-    ├── middleware/  # JWT Protection
-    ├── models/      # Mongoose Schemas
-    ├── routes/      # API Endpoints
-    ├── index.js     # Server entry point
+│
+└── server/
+    ├── config/
+    ├── controllers/
+    ├── middleware/
+    ├── models/
+    ├── routes/
+    ├── index.js
     └── .env.example
 ```
 
+---
+
 ## Running Locally
 
-1. **Clone the repository** (if applicable).
-2. **Backend Setup**:
-   ```bash
-   cd server
-   npm install
-   cp .env.example .env 
-   # Edit .env and add your MONGO_URI and JWT_SECRET
-   npm run dev
-   ```
-3. **Frontend Setup**:
-   ```bash
-   cd client
-   npm install
-   npm run dev
-   ```
+### Clone Repository
+
+```bash
+git clone https://github.com/codewithhimanshuraj/AlgoVisual.git
+cd AlgoVisual
+```
+
+### Backend Setup
+
+```bash
+cd server
+npm install
+cp .env.example .env
+```
+
+Add your environment variables:
+
+```env
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+```
+
+Run backend:
+
+```bash
+npm run dev
+```
+
+### Frontend Setup
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+---
 
 ## Deployment Guide
 
-### Database (MongoDB Atlas)
-1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and create a free cluster.
-2. Get the connection string (`mongodb+srv://...`).
-3. Add it to your backend environment variables as `MONGO_URI`.
+### MongoDB Atlas
 
-### Backend (Render / Heroku)
-1. Connect your GitHub repository to Render (Web Service).
-2. Set the Root Directory to `server`.
-3. Build Command: `npm install`
-4. Start Command: `node index.js`
-5. Add Environment Variables: `MONGO_URI`, `JWT_SECRET`, `NODE_ENV=production`.
+1. Create a free cluster on MongoDB Atlas
+2. Get your MongoDB connection string
+3. Add it to your backend `.env`
 
-### Frontend (Vercel / Netlify)
-1. Connect your GitHub repository to Vercel.
-2. Set the Root Directory to `client`.
-3. Vercel will auto-detect Vite. Build command is `npm run build`.
-4. Output directory is `dist`.
-5. Add Environment Variable: If you have an API URL, add `VITE_API_URL` pointing to your deployed Render backend. (Update frontend axios calls to use this env var).
+---
+
+### Backend Deployment (Render)
+
+- Root Directory: `server`
+- Build Command:
+
+```bash
+npm install
+```
+
+- Start Command:
+
+```bash
+node index.js
+```
+
+Environment Variables:
+- `MONGO_URI`
+- `JWT_SECRET`
+- `NODE_ENV=production`
+
+---
+
+### Frontend Deployment (Vercel)
+
+Frontend deployed on:
+
+👉 https://algovisual-kappa.vercel.app
+
+Settings used:
+- Root Directory → `client`
+- Build Command → `npm run build`
+- Output Directory → `dist`
+
+---
 
 ## API Documentation
 
-### Auth Routes
-- `POST /api/auth/register`
-  - Body: `{ name, email, password }`
-  - Returns: `{ _id, name, email, token }`
-- `POST /api/auth/login`
-  - Body: `{ email, password }`
-  - Returns: `{ _id, name, email, token }`
-- `GET /api/auth/profile`
-  - Headers: `Authorization: Bearer <token>`
-  - Returns: User Object
+### POST `/api/auth/register`
+
+Request:
+
+```json
+{
+  "name": "John",
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+
+Response:
+
+```json
+{
+  "_id": "user_id",
+  "name": "John",
+  "email": "john@example.com",
+  "token": "jwt_token"
+}
+```
+
+---
+
+### POST `/api/auth/login`
+
+Request:
+
+```json
+{
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+
+---
+
+### GET `/api/auth/profile`
+
+Headers:
+
+```bash
+Authorization: Bearer <token>
+```
+
+Returns authenticated user data.
+
+---
+
+## Author
+
+### Himanshu Raj
+
+GitHub: https://github.com/codewithhimanshuraj
+
+---
+
+## License
+
+This project is licensed under the MIT License.
