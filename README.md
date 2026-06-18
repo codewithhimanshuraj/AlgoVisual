@@ -129,14 +129,6 @@ Environment Variables:
 - `JWT_SECRET`
 - `NODE_ENV=production`
 
----
-
-### Frontend Deployment (Vercel)
-
-Frontend deployed on:
-
-👉 https://algovisual-kappa.vercel.app
-
 Settings used:
 - Root Directory → `client`
 - Build Command → `npm run build`
