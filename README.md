@@ -14,14 +14,6 @@ AlgoVisual is a comprehensive, production-ready Data Structures and Algorithms v
 - **Authentication**: JWT-based login and registration.
 - **Dark/Light Mode**: Full theme support with Tailwind CSS.
 
----
-
-## 🌐 Live Website
-
-👉 https://algovisual-kappa.vercel.app
-
----
-
 ## Technology Stack
 
 ### Frontend
