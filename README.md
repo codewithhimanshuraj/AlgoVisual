@@ -1,7 +1,5 @@
 # AlgoVisual - Production Ready DSA Visualizer
 
-🚀 Live Demo: https://algovisual-kappa.vercel.app
-
 AlgoVisual is a comprehensive, production-ready Data Structures and Algorithms visualizer built with the MERN stack (MongoDB, Express, React, Node.js).
 
 ---
